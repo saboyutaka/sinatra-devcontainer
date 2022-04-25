@@ -1,0 +1,19 @@
+{
+	"name": "Ruby",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "ruby",
+	"workspaceFolder": "/workspace",
+	"settings": {
+		"ruby.format": "rufo",
+		"ruby.useLanguageServer": true,
+		"erb-formatter.commandPath": "erb-format"
+	},
+	"extensions": [
+		"rebornix.Ruby",
+		"castwide.solargraph",
+		"elia.erb-formatter"
+	],
+	// "forwardPorts": [],
+	// "postCreateCommand": "ruby --version",
+	// "remoteUser": "vscode"
+}
