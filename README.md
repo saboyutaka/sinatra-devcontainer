@@ -18,19 +18,16 @@ docker-compose で構成
 
 - ruby(FROM ruby:2.7-bullseye)
 - postgres(FROM postgres:latest)
-  - POSTGRES_USER: pg
-  - POSTGRES_DB: dev
-  - POSTGRES_PASSWORD: password
 
 ### Ruby ContainerからPostgreSQLに接続する
 ```ruby
 require "pg"
 
 client = PG::connect(
-  :host => "postgres",
-  :user => "pg",
-  :password => "password",
-  :dbname => "dev",
+  :host => ENV["DB_HOST"],
+  :user => ENV["DB_USER"],
+  :password => ENV["DB_PASSWORD"],
+  :dbname => ENV["DB_DATABASE"],
 )
 
 res = client.exec("SELECT 1")
