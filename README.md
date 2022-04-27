@@ -8,6 +8,10 @@ Ruby 2.7 と PostgreSQL の開発環境用の devcontainer
 - erb formatter: erb-formatter
 - HTML, CSS, JS formatter: [Prettier](https://prettier.io/)
 
+## 利用方法
+1. このリポジトリをダウンロードし、任意のプロジェクトに `.devcontainer` , `.vscode` の2つのディレクトリをコピーする。
+2. VSCodeを開き、 `Reopen in Container` を実行する
+
 ## 構成
 
 docker-compose で構成
