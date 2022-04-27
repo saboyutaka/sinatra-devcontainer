@@ -1,6 +1,6 @@
-# devcontainer for Ruby 2.7
+# devcontainer for Ruby 2.7 and PostgreSQL
 
-Ruby 2.7 の開発環境用の devcontainer
+Ruby 2.7 と PostgreSQL の開発環境用の devcontainer
 
 - Intellisense: [solargraph](https://github.com/castwide/solargraph)
 - formatter: [rufo](https://github.com/ruby-formatter/rufo)
@@ -13,6 +13,24 @@ Ruby 2.7 の開発環境用の devcontainer
 docker-compose で構成
 
 - ruby(FROM ruby:2.7-bullseye)
+- postgres(FROM postgres:latest)
+  - POSTGRES_USER: pg
+  - POSTGRES_DB: dev
+  - POSTGRES_PASSWORD: password
+
+### Ruby ContainerからPostgreSQLに接続する
+```ruby
+require "pg"
+
+client = PG::connect(
+  :host => "postgres",
+  :user => "pg",
+  :password => "password",
+  :dbname => "dev",
+)
+
+res = client.exec("SELECT 1")
+```
 
 ## VSCode extensions
 

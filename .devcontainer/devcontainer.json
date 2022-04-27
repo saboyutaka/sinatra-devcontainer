@@ -1,5 +1,5 @@
 {
-	"name": "Ruby",
+	"name": "Ruby and PostgreSQL",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "ruby",
 	"workspaceFolder": "/workspace",
@@ -13,7 +13,8 @@
 		"castwide.solargraph",
 		"elia.erb-formatter"
 	],
-	// "forwardPorts": [],
-	// "postCreateCommand": "ruby --version",
-	// "remoteUser": "vscode"
+	"forwardPorts": [
+		5432
+	],
+	// "postCreateCommand": "ruby --version"
 }

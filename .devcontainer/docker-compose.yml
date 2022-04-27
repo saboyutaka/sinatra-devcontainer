@@ -9,6 +9,17 @@ services:
       - ..:/workspace:cached
       - bundle-volume:/usr/local/bundle
     command: sleep infinity
-
+    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
+    network_mode: service:postgres
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - postgres-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pg
+      POSTGRES_DB: dev
+      POSTGRES_PASSWORD: password
 volumes:
   bundle-volume: null
+  postgres-volume: null

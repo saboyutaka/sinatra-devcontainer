@@ -1,6 +1,7 @@
 FROM ruby:2.7-bullseye
 
 RUN gem install rufo erb-formatter ruby-debug-ide debase solargraph
+RUN gem install pg
 
 # Set locale as ja_JP.UTF-8
 RUN apt-get update && apt-get install -y \
