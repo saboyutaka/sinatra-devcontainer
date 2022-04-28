@@ -1,5 +1,5 @@
 {
-	"name": "Ruby and PostgreSQL",
+	"name": "Sinatra",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "ruby",
 	"workspaceFolder": "/workspace",
